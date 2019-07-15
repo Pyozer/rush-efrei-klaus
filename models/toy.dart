@@ -6,4 +6,7 @@ abstract class Toy {
   String get type => _type;
 
   void isMoved();
+
+  @override
+  bool operator ==(Object other) => other is Toy && other.type == type;
 }

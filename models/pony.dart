@@ -1,5 +1,5 @@
 import '../utils.dart';
-import 'Toy.dart';
+import 'toy.dart';
 
 class Pony extends Toy {
   static int _nb = 1;
@@ -19,4 +19,8 @@ class Pony extends Toy {
 
   @override
   void isMoved() => print("Huuuuuuhu!");
+
+  @override
+  bool operator ==(Object other) =>
+      super == other && other is Pony && other.id == id;
 }

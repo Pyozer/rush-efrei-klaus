@@ -1,5 +1,5 @@
 import '../utils.dart';
-import 'Figurine.dart';
+import 'figurine.dart';
 
 enum DBHeroes { SANGOKU, BEJITA, BEERUS, KAMESENNIN }
 
@@ -22,4 +22,8 @@ class DragonBall extends Figurine {
 
   @override
   void isMoved() => print("Kamé Hamé Ha!");
+
+  @override
+  bool operator ==(Object other) =>
+      other is DragonBall && other._character == _character;
 }
