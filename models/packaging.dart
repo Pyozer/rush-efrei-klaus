@@ -2,12 +2,12 @@ import 'object.dart';
 import 'toy.dart';
 
 class Packaging extends BaseObject {
-  bool _isOpen = false;
+  bool _isOpen;
   Toy toy;
 
   Packaging();
 
-  bool get isOpen => _isOpen;
+  bool get isOpen => _isOpen ?? true;
 
   void open() => _isOpen = true;
 

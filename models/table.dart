@@ -21,10 +21,12 @@ class Table extends Furniture {
 
   BaseObject takePos(int pos) {
     if (pos == null || pos < 0 || pos >= _content.length) return null;
-    return _content[pos];
+    return _content.removeAt(pos);
   }
 
   List<String> look() => _content
-      .map((e) => e is Toy ? "Toy" : e is Packaging ? "Packaging" : "")
+      .map((e) => e is Toy ? 'Toy' : e is Packaging ? 'Packaging' : '')
       .toList();
+
+  int searchIndex(String type) => look().indexWhere((o) => o == type);
 }

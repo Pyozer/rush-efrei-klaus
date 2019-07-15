@@ -11,14 +11,14 @@ class DragonBall extends Figurine {
   DBHeroes _character;
 
   DragonBall(this._character)
-      : super("Dragon Ball figurine ${dBHeroesToString(_character)}") {
+      : super('Dragon Ball figurine ${dBHeroesToString(_character)}') {
     multiPrint([
-      "${dBHeroesToString(_character)} is singing -->",
-      "CHA-LA HEAD CHA-LA",
-      "Nani ga okite mo kibun wa heno-heno kappa",
-      "CHA-LA HEAD CHA-LA",
-      "Mune ga pachi-pachi suru hodo",
-      "Sawagu Genki-Dama --Sparking !",
+      '${dBHeroesToString(_character)} is singing -->',
+      'CHA-LA HEAD CHA-LA',
+      'Nani ga okite mo kibun wa heno-heno kappa',
+      'CHA-LA HEAD CHA-LA',
+      'Mune ga pachi-pachi suru hodo',
+      'Sawagu Genki-Dama --Sparking !',
     ]);
   }
 
@@ -31,7 +31,7 @@ class DragonBall extends Figurine {
   }
 
   @override
-  void isMoved() => print("Kamé Hamé Ha!");
+  void isMoved() => print('Kamé Hamé Ha!');
 
   @override
   bool operator ==(Object other) =>

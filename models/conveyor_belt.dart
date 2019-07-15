@@ -23,7 +23,7 @@ class ConveyorBelt extends Furniture {
   @override
   bool put(BaseObject obj) {
     if (isBusy) {
-      print("Sorry the conveyor is busy.");
+      print('Sorry the conveyor is busy.');
       return false;
     }
     currentObject = obj;
@@ -33,7 +33,7 @@ class ConveyorBelt extends Furniture {
   @override
   BaseObject take() {
     if (!isBusy) {
-      print("Sorry, there is no object.");
+      print('Sorry, there is no object.');
       return null;
     }
     BaseObject object = currentObject;
@@ -51,7 +51,6 @@ class ConveyorBelt extends Furniture {
 
   // In Dart 'in' is already taken :/
   void btnIn() => put(_generateObject());
-
   void btnOut() => currentObject = null;
 
   void look() => '$currentObject';
