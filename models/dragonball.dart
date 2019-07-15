@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '../utils.dart';
 import 'figurine.dart';
 
@@ -18,6 +20,14 @@ class DragonBall extends Figurine {
       "Mune ga pachi-pachi suru hodo",
       "Sawagu Genki-Dama --Sparking !",
     ]);
+  }
+
+  factory DragonBall.random() {
+    int rand = Random().nextInt(4);
+    if (rand == 0) return DragonBall(DBHeroes.SANGOKU);
+    if (rand == 1) return DragonBall(DBHeroes.BEJITA);
+    if (rand == 2) return DragonBall(DBHeroes.BEERUS);
+    return DragonBall(DBHeroes.KAMESENNIN);
   }
 
   @override

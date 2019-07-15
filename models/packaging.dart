@@ -1,6 +1,7 @@
+import 'object.dart';
 import 'toy.dart';
 
-class Packaging {
+class Packaging extends BaseObject {
   bool _isOpen = false;
   Toy toy;
 

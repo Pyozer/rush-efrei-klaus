@@ -1,4 +1,6 @@
-abstract class Toy {
+import 'object.dart';
+
+abstract class Toy extends BaseObject {
   String _type;
 
   Toy(this._type);
