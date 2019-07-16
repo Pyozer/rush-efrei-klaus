@@ -1,9 +1,4 @@
-import 'dart:math';
-
-import '../packaging/box.dart';
-import '../packaging/gift_wrap.dart';
-import '../toy/dragonball.dart';
-import '../toy/pony.dart';
+import '../../patterns/conveyor_belt_factory.dart';
 import '../object.dart';
 import 'furniture.dart';
 
@@ -41,16 +36,8 @@ class ConveyorBelt extends Furniture {
     return object;
   }
 
-  BaseObject _generateObject() {
-    int rand = Random().nextInt(4);
-    if (rand == 0) return Box();
-    if (rand == 1) return GiftWrap();
-    if (rand == 2) return DragonBall.random();
-    return Pony();
-  }
-
   // In Dart 'in' is already taken :/
-  void btnIn() => put(_generateObject());
+  void btnIn() => put(ConveyorBeltFactory().generateObject());
   void btnOut() => currentObject = null;
 
   void look() => '$currentObject';

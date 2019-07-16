@@ -7,6 +7,8 @@ import 'models/toy/dragonball.dart';
 import 'models/toy/pony.dart';
 import 'models/toy/toy.dart';
 import 'models/elf.dart';
+import 'patterns/conveyor_belt_factory.dart';
+import 'patterns/table_factory.dart';
 
 void main() {
   // Step #1
@@ -39,8 +41,8 @@ void main() {
   // Step #3
   print('--- STEP #3 ---');
 
-  Table table = Table();
-  ConveyorBelt conveyorBelt = ConveyorBelt();
+  Table table = TableFactory().makeTable();
+  ConveyorBelt conveyorBelt = ConveyorBeltFactory().makeConveyorBelt();
 
   majdi.put(table, paper);
   majdi.put(table, pony);
