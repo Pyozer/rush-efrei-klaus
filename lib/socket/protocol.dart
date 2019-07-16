@@ -1,0 +1,1 @@
+typedef OnCreateElf(String nickname);

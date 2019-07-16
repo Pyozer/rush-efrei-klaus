@@ -3,7 +3,7 @@ version: 1.0.0
 description: School project to learn pragmatic programming
 author: Jean-Charles <jeancharles.msse@gmail.com>
 environment:
-  sdk: '>=2.0.0 <3.0.0'
+  sdk: '>=2.2.0 <3.0.0'
 
 dependencies:
   dcdg: ^2.0.1

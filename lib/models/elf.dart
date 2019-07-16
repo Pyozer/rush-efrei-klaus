@@ -11,6 +11,8 @@ class Elf {
 
   Elf(this.nickname, this.station);
 
+  factory Elf.workless(String nickname) => Elf(nickname, null);
+
   void pack(Packaging packaging, Toy toy) {
     if (!packaging.isOpen && !(packaging is GiftWrap))
       return print('Sorry this package is not open');
