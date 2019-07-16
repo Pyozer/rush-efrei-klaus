@@ -1,5 +1,5 @@
-import 'object.dart';
-import 'toy.dart';
+import '../object.dart';
+import '../toy/toy.dart';
 
 class Packaging extends BaseObject {
   bool _isOpen;

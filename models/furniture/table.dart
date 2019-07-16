@@ -1,7 +1,7 @@
-import 'object.dart';
+import '../packaging/packaging.dart';
+import '../toy/toy.dart';
+import '../object.dart';
 import 'furniture.dart';
-import 'packaging.dart';
-import 'toy.dart';
 
 class Table extends Furniture {
   List<BaseObject> _content = [];

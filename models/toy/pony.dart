@@ -1,4 +1,4 @@
-import '../utils.dart';
+import '../../utils.dart';
 import 'toy.dart';
 
 class Pony extends Toy {

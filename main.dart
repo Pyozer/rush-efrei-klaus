@@ -1,12 +1,12 @@
-import 'models/conveyor_belt.dart';
-import 'models/dragonball.dart';
-import 'models/pony.dart';
-import 'models/table.dart';
-import 'models/toy.dart';
-import 'models/box.dart';
+import 'models/packaging/box.dart';
+import 'models/packaging/gift_wrap.dart';
+import 'models/packaging/packaging.dart';
+import 'models/furniture/conveyor_belt.dart';
+import 'models/furniture/table.dart';
+import 'models/toy/dragonball.dart';
+import 'models/toy/pony.dart';
+import 'models/toy/toy.dart';
 import 'models/elf.dart';
-import 'models/gift_wrap.dart';
-import 'models/packaging.dart';
 
 void main() {
   // Step #1

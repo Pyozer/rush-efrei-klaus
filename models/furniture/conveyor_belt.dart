@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import 'box.dart';
-import 'dragonball.dart';
-import 'gift_wrap.dart';
-import 'object.dart';
+import '../packaging/box.dart';
+import '../packaging/gift_wrap.dart';
+import '../toy/dragonball.dart';
+import '../toy/pony.dart';
+import '../object.dart';
 import 'furniture.dart';
-import 'pony.dart';
 
 class ConveyorBelt extends Furniture {
   BaseObject _currentObject;

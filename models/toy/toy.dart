@@ -1,4 +1,4 @@
-import 'object.dart';
+import '../object.dart';
 
 abstract class Toy extends BaseObject {
   String _type;

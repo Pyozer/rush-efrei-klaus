@@ -1,10 +1,10 @@
-import 'conveyor_belt.dart';
-import 'furniture.dart';
-import 'gift_wrap.dart';
+import 'furniture/furniture.dart';
+import 'furniture/table.dart';
+import 'furniture/conveyor_belt.dart';
+import 'packaging/packaging.dart';
+import 'packaging/gift_wrap.dart';
+import 'toy/toy.dart';
 import 'object.dart';
-import 'packaging.dart';
-import 'table.dart';
-import 'toy.dart';
 
 class Elf {
   String nickname;

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import '../utils.dart';
+import '../../utils.dart';
 import 'figurine.dart';
 
 enum DBHeroes { SANGOKU, BEJITA, BEERUS, KAMESENNIN }
