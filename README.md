@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="./assets/efrei-klaus-logo.png"/>
-</p>
+<p align="center"><img src="./assets/efrei-klaus-logo.png"/></p>
 
 ## <a name='TOC'>📗 Summary</a>
 
@@ -10,15 +8,16 @@
 - [Credits](#credits)
 
 ## <a name='overview'>👮🏾‍ Rules</a>
+
 =================
 
 Hi, voici quelques règles pour mener à bien ce projet :)
 
-* Ce projet DOIT être faire tout seul
-* Le sujet est en français mais votre code DOIT être en anglais [`classe`, `variable`, etc.]
-* Vous DEVEZ créer un dépot git pour ce projet
-* Vous DEVEZ créer un diagramme `UML` de votre projet sur [LucidChart](lucidchart.com)
-* Vous DEVEZ me notifier par un message privé original le COMMENCEMENT du projet ET
+- Ce projet DOIT être faire tout seul
+- Le sujet est en français mais votre code DOIT être en anglais [`classe`, `variable`, etc.]
+- Vous DEVEZ créer un dépot git pour ce projet
+- Vous DEVEZ créer un diagramme `UML` de votre projet sur [LucidChart](lucidchart.com)
+- Vous DEVEZ me notifier par un message privé original le COMMENCEMENT du projet ET
 le PASSAGE à chaque étape.
 
 > Bien évidemment, vous pouvez échanger entre vous, le peer-learning est la clé de
@@ -27,8 +26,8 @@ votre apprentissage MAIS la copie sera sanctionné
 N'hésitez pas en cas de de question à les poser sur le channel `pragmatic` de slack,
 il n'y a pas de question inutile.
 
-
 ## <a name='overview'>🎅🏼 Overview</a>
+
 =================
 
 Le père Noël a fait une demande officielle à l'Efrei pour informatiser sa chaine d'emballage de cadeaux;
@@ -44,6 +43,7 @@ Il vous fournit une liste d'indications et de contraintes pour l'implémentatio
 Le chef de projet vous demande d'écrire les classes Toy, Pony, Figurine et DragonBall.
 
 Il vous indique:
+
 - Un `Pony` est un `Toy`
 - Une `Figurine` est un `Toy`
 - Un `DragonBall` est une `Figurine`
@@ -74,7 +74,6 @@ Dou-double poney, j’fais izi money
 L'attribut type retourne la chaine de caractère `Pony #X`
 
 Quand un `Pony` est bougé il affiche `Huuuuuuhu!`
-
 
 ### Dragon Ball
 
@@ -159,26 +158,28 @@ Kamé Hamé Ha!
 
 ## Etape \#2. Une histoire d'emballage
 
-Il faut maintenant être capable de gérer l'emballage des cadeaux:
+Il faut maintenant être capable de gérer l\'emballage des cadeaux:
 
 #### Préparation
 
-* Une `Box` est un `Packaging`
-* Un `GiftWrap` est aussi un `Packaging`
+- Une `Box` est un `Packaging`
+- Un `GiftWrap` est aussi un `Packaging`
 
 > 💡 Tips: qu'est ce que représente la "classe" `Packaging` ?
 
 Un `Packaging` possède 2 attributs:
-* `isOpen` un booléen qui permet de savoir s'il est ouvert ou fermé
-* `toy` un jouet qui correspond à celui qui est emballé
+
+- `isOpen` un booléen qui permet de savoir s'il est ouvert ou fermé
+- `toy` un jouet qui correspond à celui qui est emballé
 
 Par défaut un emballage est fermé et il n'y a pas de jouet emballé
 
 > 💡 Tips: Valeur par défaut d'un jouet -- https://goo.gl/JF8SAv
 
 Un `Packaging` possède 2 méthodes:
-* `open` qui permet d'ouvrir un emballage
-* `insert` qui prend un jouet en paramêtre et permet de l'emballer
+
+- `open` qui permet d'ouvrir un emballage
+- `insert` qui prend un jouet en paramêtre et permet de l'emballer
 
 Lorsqu'un objet est emballé, l'emballage devient fermé.
 
@@ -440,6 +441,7 @@ Pour cela vous devez utiliser des chaussettes magiques.
 
 **Méthodes : create_elf**
 **Body :**
+
 ```json
 {
     "method": "create_elf",
@@ -448,7 +450,6 @@ Pour cela vous devez utiliser des chaussettes magiques.
 ```
 
 Créer un Elf, avec un nickname spécifique.
-
 
 ## Etape \#6. Bonus
 
