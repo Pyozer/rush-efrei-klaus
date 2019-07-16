@@ -1,10 +1,13 @@
-import '../packaging/packaging.dart';
-import '../toy/toy.dart';
-import '../object.dart';
-import 'furniture.dart';
+import 'package:rush_efrei_klaus/models/furniture/furniture.dart';
+import 'package:rush_efrei_klaus/models/object.dart';
+import 'package:rush_efrei_klaus/models/packaging/packaging.dart';
+import 'package:rush_efrei_klaus/models/toy/toy.dart';
+import 'package:rush_efrei_klaus/patterns/table_factory.dart';
 
-class Table extends Furniture {
+class Table extends Furniture<TableFactory> {
   List<BaseObject> _content = [];
+
+  Table(TableFactory tableFactory) : super(tableFactory);
 
   @override
   bool put(BaseObject obj) {
@@ -24,6 +27,7 @@ class Table extends Furniture {
     return _content.removeAt(pos);
   }
 
+  @override
   List<String> look() => _content
       .map((e) => e is Toy ? 'Toy' : e is Packaging ? 'Packaging' : '')
       .toList();

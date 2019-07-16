@@ -1,16 +1,16 @@
 import 'dart:math';
 
-import '../models/furniture/conveyor_belt.dart';
-import '../models/object.dart';
-import '../models/packaging/box.dart';
-import '../models/packaging/gift_wrap.dart';
-import '../models/toy/dragonball.dart';
-import '../models/toy/pony.dart';
-import 'pconveyorbelt.dart';
+import 'package:rush_efrei_klaus/models/furniture/conveyor_belt.dart';
+import 'package:rush_efrei_klaus/models/object.dart';
+import 'package:rush_efrei_klaus/models/packaging/box.dart';
+import 'package:rush_efrei_klaus/models/packaging/gift_wrap.dart';
+import 'package:rush_efrei_klaus/models/toy/dragonball.dart';
+import 'package:rush_efrei_klaus/models/toy/pony.dart';
+import 'package:rush_efrei_klaus/patterns/pconveyorbelt.dart';
 
 class ConveyorBeltFactory implements PConveyorBelt {
   @override
-  ConveyorBelt makeConveyorBelt() => ConveyorBelt();
+  ConveyorBelt makeConveyorBelt() => ConveyorBelt(this);
 
   @override
   BaseObject generateObject() {

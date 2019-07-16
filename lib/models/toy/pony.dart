@@ -1,5 +1,5 @@
-import '../../utils.dart';
-import 'toy.dart';
+import 'package:rush_efrei_klaus/models/toy/toy.dart';
+import 'package:rush_efrei_klaus/utils.dart';
 
 class Pony extends Toy {
   static int _nb = 1;

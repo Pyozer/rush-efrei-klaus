@@ -1,5 +1,5 @@
-import '../object.dart';
-import '../toy/toy.dart';
+import 'package:rush_efrei_klaus/models/object.dart';
+import 'package:rush_efrei_klaus/models/toy/toy.dart';
 
 class Packaging extends BaseObject {
   bool _isOpen;

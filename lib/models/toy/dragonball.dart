@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import '../../utils.dart';
-import 'figurine.dart';
+import 'package:rush_efrei_klaus/models/toy/figurine.dart';
+import 'package:rush_efrei_klaus/utils.dart';
 
 enum DBHeroes { SANGOKU, BEJITA, BEERUS, KAMESENNIN }
 

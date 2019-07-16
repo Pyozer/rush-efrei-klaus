@@ -1,14 +1,11 @@
-import 'models/packaging/box.dart';
-import 'models/packaging/gift_wrap.dart';
-import 'models/packaging/packaging.dart';
-import 'models/furniture/conveyor_belt.dart';
-import 'models/furniture/table.dart';
-import 'models/toy/dragonball.dart';
-import 'models/toy/pony.dart';
-import 'models/toy/toy.dart';
-import 'models/elf.dart';
-import 'patterns/conveyor_belt_factory.dart';
-import 'patterns/table_factory.dart';
+import 'package:rush_efrei_klaus/models/elf.dart';
+import 'package:rush_efrei_klaus/models/packaging/box.dart';
+import 'package:rush_efrei_klaus/models/packaging/gift_wrap.dart';
+import 'package:rush_efrei_klaus/models/packaging/packaging.dart';
+import 'package:rush_efrei_klaus/models/toy/dragonball.dart';
+import 'package:rush_efrei_klaus/models/toy/pony.dart';
+import 'package:rush_efrei_klaus/models/toy/toy.dart';
+import 'package:rush_efrei_klaus/models/work_station.dart';
 
 void main() {
   // Step #1
@@ -23,7 +20,7 @@ void main() {
   // Step #2
   print('\n--- STEP #2 ---');
 
-  Elf majdi = Elf('makiboto');
+  Elf majdi = Elf('makiboto', null);
   Packaging box = Box();
   majdi.pack(box, goku);
   box.open();
@@ -41,14 +38,9 @@ void main() {
   // Step #3
   print('--- STEP #3 ---');
 
-  Table table = TableFactory().makeTable();
-  ConveyorBelt conveyorBelt = ConveyorBeltFactory().makeConveyorBelt();
-
-  majdi.put(table, paper);
-  majdi.put(table, pony);
-  majdi.put(table, box);
+  majdi.station = WorkStation.create();
 
   for (var i = 0; i < 10; i++) {
-    majdi.pressInBtnAndPackage(table, conveyorBelt);
+    majdi.pressInBtnAndPackage();
   }
 }

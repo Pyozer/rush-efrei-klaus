@@ -1,4 +1,4 @@
-import '../object.dart';
+import 'package:rush_efrei_klaus/models/object.dart';
 
 abstract class Toy extends BaseObject {
   String _type;

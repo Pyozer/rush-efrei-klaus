@@ -1,4 +1,4 @@
-import 'packaging.dart';
+import 'package:rush_efrei_klaus/models/packaging/packaging.dart';
 
 class Box extends Packaging {
   Box() : super() {

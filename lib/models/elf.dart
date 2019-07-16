@@ -1,15 +1,15 @@
-import 'furniture/furniture.dart';
-import 'furniture/table.dart';
-import 'furniture/conveyor_belt.dart';
-import 'packaging/packaging.dart';
-import 'packaging/gift_wrap.dart';
-import 'toy/toy.dart';
-import 'object.dart';
+import 'package:rush_efrei_klaus/models/furniture/furniture.dart';
+import 'package:rush_efrei_klaus/models/object.dart';
+import 'package:rush_efrei_klaus/models/packaging/gift_wrap.dart';
+import 'package:rush_efrei_klaus/models/packaging/packaging.dart';
+import 'package:rush_efrei_klaus/models/toy/toy.dart';
+import 'package:rush_efrei_klaus/models/work_station.dart';
 
 class Elf {
   String nickname;
+  WorkStation station;
 
-  Elf(this.nickname);
+  Elf(this.nickname, this.station);
 
   void pack(Packaging packaging, Toy toy) {
     if (!packaging.isOpen && !(packaging is GiftWrap))
@@ -46,51 +46,60 @@ class Elf {
     return obj;
   }
 
-  void btnIn(ConveyorBelt conveyorBelt) {
+  void btnIn() {
     print('$nickname has pushed IN button');
-    conveyorBelt.btnIn();
+    station.conveyorBelt.btnIn();
   }
 
-  void btnOut(ConveyorBelt conveyorBelt) {
+  void btnOut() {
     print('$nickname has pushed OUT button');
-    conveyorBelt.btnOut();
+    station.conveyorBelt.btnOut();
   }
 
-  void pressInBtnAndPackage(Table table, ConveyorBelt conveyorBelt) {
-    btnIn(conveyorBelt);
-    BaseObject objCreated = conveyorBelt.take();
-    if (objCreated is Packaging) {
-      int index = table.searchIndex('Toy');
-      if (index == -1) {
-        print('There is no Toy on table');
-        _handleNoMatch(table, conveyorBelt, objCreated);
-        return;
-      }
+  void pressInBtnAndPackage() {
+    // Press in button of conveyor belt to generate an object
+    btnIn();
+    switch (station.conveyorBelt.look().first) {
+      case 'Packaging':
+        int index = station.table.searchIndex('Toy');
+        if (index == -1) {
+          print('There is no Toy on table');
+          _handleNoMatch();
+          return;
+        }
 
-      Toy toy = table.takePos(index);
-      pack(objCreated, toy);
-      put(conveyorBelt, objCreated);
-      btnOut(conveyorBelt);
-    } else if (objCreated is Toy) {
-      int index = table.searchIndex('Packaging');
-      if (index == -1) {
-        print('There is no packaging on table');
-        _handleNoMatch(table, conveyorBelt, objCreated);
-        return;
-      }
+        Toy toy = station.table.takePos(index);
+        Packaging packagingCreated = station.conveyorBelt.take();
+        _handleObjectOut(packagingCreated, toy);
+        break;
+      case 'Toy':
+        int index = station.table.searchIndex('Packaging');
+        if (index == -1) {
+          print('There is no packaging on table');
+          _handleNoMatch();
+          return;
+        }
 
-      Packaging packaging = table.takePos(index);
-      pack(packaging, objCreated);
-      put(conveyorBelt, packaging);
-      btnOut(conveyorBelt);
+        Packaging packaging = station.table.takePos(index);
+        Toy toyCreated = station.conveyorBelt.take();
+        _handleObjectOut(packaging, toyCreated);
+        break;
+      default:
     }
   }
 
-  void _handleNoMatch(Table table, ConveyorBelt conveyorBelt, BaseObject obj) {
-    bool isObjPut = put(table, obj);
+  void _handleObjectOut(Packaging packaging, Toy toy) {
+    pack(packaging, toy);
+    put(station.conveyorBelt, packaging);
+    btnOut();
+  }
+
+  void _handleNoMatch() {
+    BaseObject objCreated = station.conveyorBelt.take();
+    bool isObjPut = put(station.table, objCreated);
     if (!isObjPut) {
-      put(conveyorBelt, obj);
-      btnOut(conveyorBelt);
+      put(station.conveyorBelt, objCreated);
+      btnOut();
     }
   }
 

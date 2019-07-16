@@ -1,10 +1,15 @@
-import '../../patterns/conveyor_belt_factory.dart';
-import '../object.dart';
-import 'furniture.dart';
 
-class ConveyorBelt extends Furniture {
+
+import 'package:rush_efrei_klaus/models/furniture/furniture.dart';
+import 'package:rush_efrei_klaus/models/object.dart';
+import 'package:rush_efrei_klaus/patterns/conveyor_belt_factory.dart';
+
+class ConveyorBelt extends Furniture<ConveyorBeltFactory> {
   BaseObject _currentObject;
   bool _isBusy = false;
+
+  ConveyorBelt(ConveyorBeltFactory conveyorBeltFactory)
+      : super(conveyorBeltFactory);
 
   BaseObject get currentObject => _currentObject;
 
@@ -37,8 +42,9 @@ class ConveyorBelt extends Furniture {
   }
 
   // In Dart 'in' is already taken :/
-  void btnIn() => put(ConveyorBeltFactory().generateObject());
+  void btnIn() => put(manager.generateObject());
   void btnOut() => currentObject = null;
 
-  void look() => '$currentObject';
+  @override
+  List<String> look() => ['$currentObject'];
 }
