@@ -53,5 +53,12 @@ void main() async {
       Elf elf = Elf(nickname, WorkStation.create());
       listElfs.add(elf);
     },
+    (nickname) {
+      print("Elf press btn in from a client !");
+      final elf = listElfs.firstWhere((elf) => elf.nickname == nickname, orElse: () => null);
+      if (elf != null) {
+        elf.pressInBtnAndPackage();
+      }
+    },
   );
 }

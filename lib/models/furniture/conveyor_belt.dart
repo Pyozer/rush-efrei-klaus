@@ -2,6 +2,8 @@
 
 import 'package:rush_efrei_klaus/models/furniture/furniture.dart';
 import 'package:rush_efrei_klaus/models/object.dart';
+import 'package:rush_efrei_klaus/models/packaging/packaging.dart';
+import 'package:rush_efrei_klaus/models/toy/toy.dart';
 import 'package:rush_efrei_klaus/patterns/conveyor_belt_factory.dart';
 
 class ConveyorBelt extends Furniture<ConveyorBeltFactory> {
@@ -46,5 +48,9 @@ class ConveyorBelt extends Furniture<ConveyorBeltFactory> {
   void btnOut() => currentObject = null;
 
   @override
-  List<String> look() => ['$currentObject'];
+  List<String> look() {
+    if (currentObject is Packaging) return ['Packaging'];
+    if (currentObject is Toy) return ['Toy'];
+    return [''];
+  }
 }
